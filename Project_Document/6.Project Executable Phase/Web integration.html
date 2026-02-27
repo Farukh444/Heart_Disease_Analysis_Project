@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heart Disease Analysis</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+/* HERO */
+.hero-section{
+    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url('https://cloudfront-us-east-1.images.arcpublishing.com/infobae/XIX6B6CPDVEQ7BWFSYNFY6HVLY.png');
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:3rem;
+    font-weight:700;
+}
+
+.btn-custom{
+    background:#e84118;
+    color:#fff;
+    padding:12px 30px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-custom:hover{
+    background:#c23616;
+    transform:translateY(-2px);
+}
+
+section{padding:80px 0;}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-weight:600;
+    position:relative;
+}
+
+.section-title h2::after{
+    content:'';
+    width:50px;
+    height:3px;
+    background:#e84118;
+    position:absolute;
+    bottom:-8px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.tableau-container{
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-card{
+    text-align:center;
+    padding:30px;
+    border:1px solid #eee;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.contact-card:hover{
+    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    transform:translateY(-5px);
+}
+
+.contact-icon{
+    font-size:2rem;
+    color:#e84118;
+}
+
+footer{
+    background:#2d3436;
+    color:#fff;
+    padding:20px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#">Heart Disease Analysis</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+<li class="nav-item"><a class="nav-link" href="#story">Story</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero-section">
+<div class="container hero-content">
+<h1>Heart Disease Analysis</h1>
+<p class="lead">Data-driven insights to understand cardiovascular risk factors and support early detection.</p>
+<a href="#dashboard" class="btn btn-custom">View Dashboard</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+<div class="section-title">
+<h2>About the Project</h2>
+</div>
+
+<div class="row align-items-center">
+<div class="col-md-6">
+<img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/XIX6B6CPDVEQ7BWFSYNFY6HVLY.png" class="img-fluid rounded shadow" alt="Heart health analysis">
+</div>
+
+<div class="col-md-6 mt-4 mt-md-0">
+<h4>Why Heart Disease Analysis?</h4>
+<p class="text-muted">
+Heart disease remains one of the leading causes of death worldwide. This project uses data visualization to identify risk patterns, monitor health indicators, and support preventive care decisions.
+</p>
+
+<ul class="list-unstyled">
+<li class="mb-2">📊 <strong>Dashboard:</strong> Overview of patient demographics & risk factors.</li>
+<li class="mb-2">📖 <strong>Story:</strong> Guided insights into prevention & trends.</li>
+<li>❤️ <strong>Healthcare Insights:</strong> Promoting awareness & data-driven decisions.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="bg-light">
+<div class="container">
+<div class="section-title">
+<h2>Dashboard</h2>
+<p>Interactive visualization of heart disease risk indicators</p>
+</div>
+
+<div class="tableau-container">
+<div class='tableauPlaceholder' id='vizDashboard'></div>
+</div>
+</div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+<div class="container">
+<div class="section-title">
+<h2>Story Insights</h2>
+<p>Understanding patterns and prevention</p>
+</div>
+
+<div class="tableau-container">
+<div class='tableauPlaceholder' id='vizStory'></div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-light">
+<div class="container">
+<div class="section-title">
+<h2>Contact Team</h2>
+<p>Reach out for collaboration & insights</p>
+</div>
+
+<div class="row justify-content-center">
+<div class="col-md-4">
+<div class="contact-card bg-white">
+<div class="contact-icon">📊</div>
+<h5>Shaik Farukh Ahamed</h5>
+<p class="text-muted">Data Analyst</p>
+<p><strong>Email:</strong><br>
+<a href="mailto:farukhahamed456@gmail.com">farukhahamed456@gmail.com</a>
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 Heart Disease Analysis Project</p>
+</footer>
+
+<!-- Tableau Embeds -->
+<script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+<script>
+function loadViz(id, url){
+    const container = document.getElementById(id);
+    const viz = document.createElement("iframe");
+    viz.src = url;
+    viz.style.width="100%";
+    viz.style.height="800px";
+    viz.style.border="none";
+    container.appendChild(viz);
+}
+
+loadViz("vizDashboard",
+"https://public.tableau.com/views/HeartDiseaseanalysis_17720896987490/Dashboard1?:showVizHome=no");
+
+loadViz("vizStory",
+"https://public.tableau.com/views/HeartDiseaseanalysisstory_17720901197950/HeartDiseaseAnalysis?:showVizHome=no");
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
